@@ -21,12 +21,12 @@ if (isset($_POST['submit'])) {
             // This is to check if the response contains valid data
             if ($weather_data && isset($weather_data['main'])) {
                 $temperature = $weather_data['main']['temp'];
-                $temperature_in_celsius = round($temperature);
-                $temperature_current_weather = $weather_data['weather'][0]['main'];
-                $weather_description = $weather_data['weather'][0]['description'];
-                $weather_icon = $weather_data['weather'][0]['icon'];
-                $humidity = $weather_data['main']['humidity'];
-                $wind_speed = $weather_data['wind']['speed'];
+                $temperature_in_celsius = round($temperature); 
+                $temperature_current_weather = $weather_data['weather'][0]['main']; //code to retrieve the temperature in celcius
+                $weather_description = $weather_data['weather'][0]['description']; //code to retrieve the weather description
+                $weather_icon = $weather_data['weather'][0]['icon'];              //code to get the weather icon image
+                $humidity = $weather_data['main']['humidity'];                   //code to get the humdity %
+                $wind_speed = $weather_data['wind']['speed'];                   //code to get the wind speed
                 
                 // Formatting weather data
                 $weather ="<b><b/>" ."The current Temperature in $city is $temperature_in_celsius °C with $weather_description<br><br>";
@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>The Weather App</title>
 
-    <style>
+    <style> 
         body {
             margin: 0px;
             padding: 0px;
